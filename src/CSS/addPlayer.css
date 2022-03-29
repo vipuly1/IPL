@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#playerform{
+    background-color: antiquewhite;
+    margin: 10vh  auto 0;
+    width: 35%;
+    border-radius: 8px;
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.input:not(#submit){
+    border: none;
+    border-bottom: 2px solid grey;
+    min-width: 95%;
+    padding: 5px;
+}
+input:focus{
+    outline: none !important
+
+}
