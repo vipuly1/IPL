@@ -1,6 +1,6 @@
 #container{
     background-color: rgb(192, 140, 240);
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
     padding-top: 20vh;
 }
@@ -34,4 +34,10 @@
     border-radius: 5px;
     font-size: 15px;
     letter-spacing: 1px;
+}
+.login-form-text{
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: 20px;
 }

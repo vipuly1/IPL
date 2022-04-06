@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import  "../CSS/addPlayer.css"
 function AddPlayer() {
   const [file, setFile] = useState() 
- console.log(file)
   const addUser = (e) => {
     e.preventDefault()
     const data = {
@@ -50,7 +49,7 @@ function AddPlayer() {
         </label><br></br>
 
         <label>Player Image<br></br>
-          <input type="file" accept="image/png , image/jpg" required name="pImage" onChange={(e)=>setFile(e.target.files[0])}></input>
+          <input type="file" accept="image/png , image/jpg, image/jpeg" required name="pImage" onChange={(e)=>setFile(e.target.files[0])}></input>
           <div id= "display_image"></div>
         </label><br></br>
 

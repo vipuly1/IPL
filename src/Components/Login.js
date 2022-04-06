@@ -34,7 +34,9 @@ function Login() {
   }
 
   return <div id="container">
+    <h2 className='login-form-text'>Login</h2>
     <form onSubmit={loginUser} id="form">
+      
       <label>
         Email<br></br>
         <input className='input-form' type="email" name="email" required></input>
