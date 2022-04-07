@@ -4,12 +4,14 @@ import { useLocation } from "react-router";
 
 function Players(props) {
   const location = useLocation()
-  let propsData = location.state;
-  console.log(propsData)
+  let {playerlist, team} = location.state;
+  console.log(playerlist,team)
+
   return (
     <React.Fragment>
       <section className={player.playerSection}>
-        {propsData.map((item, index)=>{
+        {playerlist.filter(item=> item.from === team).map((item, index)=>{
+          console.log(item.from)
           return <div key={index}className={player.playerCard}>
           <div className={player.imageSection}>
             <img src= {`/playerImg/${item.playerImage}`} ></img>

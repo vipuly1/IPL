@@ -5,59 +5,49 @@ import Players from "./Players";
 import react from "react";
 import { Link } from "react-router-dom";
 
-
 function Homepage() {
   const [players, setPlayers] = useState([]);
-  const [teams, setTeams] = useState([])
+  const [teams, setTeams] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [showPlayers, setShowPlayers] = useState(false)
+  const [showPlayers, setShowPlayers] = useState(false);
 
-  const user = JSON.parse(localStorage.getItem("loginStatus")).user
+  const user = JSON.parse(localStorage.getItem("loginStatus")).user;
   useEffect(async () => {
     await axios
       .get(`players/${searchText}`)
       .then((res) => {
         setPlayers(res.data);
-        //   if(res.data !== undefined){
-        //     let playersTeam = []
-        //     for(let i=0; i<res.data.length;i++){
-        //       console.log(i)
-        //       let teamname = res.data[i].from
-        //       console.log(typeof(teamname), typeof(teams.indexOf(teamname)), i)
-
-        //       if(playersTeam.includes(teamname) === false){
-        //         playersTeam.push(teamname)
-        //         setTeams(teams=>[...teams, teamname])
-
-        //       }
-        //     } 
-        // }
       })
       .catch((err) => {
         console.log(err);
       });
   }, [searchText]);
+
+  
   const handleClick = () => {
     axios({
       method: "post",
       url: "validateUser",
       headers: {
-        "Authorization": `${user}`
-      }
+        Authorization: `${user}`,
+      },
     }).then((response) => {
-      console.log(response.data)
+      console.log(response.data);
 
-      if (response.data == "Admin") { window.location.href = "./add-players" }
-      else { console.log("You are not admin") }
-    })
-  }
+      if (response.data == "Admin") {
+        window.location.href = "./add-players";
+      } else {
+        console.log("You are not admin");
+      }
+    });
+  };
 
-  const loadPlayers=(e)=>{
-    let oneTeam = e.target.textContent
-    console.log("inside players", oneTeam)
-    setShowPlayers(true)
-
-  }
+  const loadPlayers = (e) => {
+    setSearchText(e.target.textContent)
+    console.log(players)
+ 
+    //setShowPlayers(true);
+  };
 
   return (
     <>
@@ -75,11 +65,23 @@ function Homepage() {
         </nav>
       </header>
       <div className="cardContainer">
-        <Link to="/players" state={players}><div className="card csk" onClick={loadPlayers} >CSK</div></Link>
-        <div className="card rcb">Hello</div>
-        <div className="card mi">Hello</div>
-        <div className="card kkr">Hello</div>
-        <div className="card dc">Hello</div>
+        <Link to="/players" state={players}>
+          <div className="card csk" onClick={loadPlayers}>
+            CSK
+          </div>
+        </Link>
+        <Link to="/players" state={players}>
+          <div className="card mi">Hello</div>
+        </Link>
+        <Link to="/players" state={players}>
+          <div className="card kkr">Hello</div>
+        </Link>
+        <Link to="/players" state={players}>
+          <div className="card dc">Hello</div>
+        </Link>
+        <Link to="/players" state={{playerlist:players, team: "RCB"}}>
+          <div className="card rcb">Hello</div>
+        </Link>
       </div>
     </>
   );

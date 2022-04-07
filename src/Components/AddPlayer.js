@@ -33,7 +33,7 @@ function AddPlayer() {
         const char = "Invalid_Code"
         const response = res.data
         console.log(response)
-        // if(response.operation === "success") document.getElementById("playerform").reset()
+         if(response.operation === "success") document.getElementById("playerform").reset()
         
         // else if(response.indexOf(char)=== 0){
         //   document.getElementById("prompt").textContent = response
