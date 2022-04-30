@@ -65,22 +65,20 @@ function Homepage() {
         </nav>
       </header>
       <div className="cardContainer">
-        <Link to="/players" state={players}>
-          <div className="card csk" onClick={loadPlayers}>
-            CSK
-          </div>
+        <Link to="/players" state={{playerlist:players, team: "CSK"}}>
+          <div className="card csk" onClick={loadPlayers}></div>
         </Link>
-        <Link to="/players" state={players}>
-          <div className="card mi">Hello</div>
+        <Link to="/players" state={{playerlist:players, team: "MI"}}>
+          <div className="card mi" onClick={loadPlayers}></div>
         </Link>
-        <Link to="/players" state={players}>
-          <div className="card kkr">Hello</div>
+        <Link to="/players" state={{playerlist:players, team: "KKR"}}>
+          <div className="card kkr" onClick={loadPlayers}></div>
         </Link>
-        <Link to="/players" state={players}>
-          <div className="card dc">Hello</div>
+        <Link to="/players" state={{playerlist:players, team: "DC"}}>
+          <div className="card dc" onClick={loadPlayers}></div>
         </Link>
         <Link to="/players" state={{playerlist:players, team: "RCB"}}>
-          <div className="card rcb">Hello</div>
+          <div className="card rcb" onClick={loadPlayers}></div>
         </Link>
       </div>
     </>

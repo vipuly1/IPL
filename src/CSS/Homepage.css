@@ -16,13 +16,18 @@ nav{
 }
 
 .card{
-    background-color: red;
-    min-width: calc(300px);
+    min-width: calc(350px);
+    max-width: 350px;
     min-height: 250px;
-    margin:10px;
+    margin:12px;
     border-radius: 8px;
     box-shadow: 8px 6px 6px grey;
     display: block;
+    border: 2px solid white;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
     
 }
 .card:hover{
@@ -36,21 +41,25 @@ nav{
     display: flex;
     flex-wrap: wrap;
 }
-
 .csk{
     background-color: yellow;
+    background-image: url("../images/csk.png");
 }
 
 .mi{
     background-color: blue;
+    background-image: url("../images/mi.png");
 }
 
 .kkr{
     background-color: goldenrod;
+    background-image: url("../images/kkr.png");
 }
 .rcb{
     background-color: rgb(182, 19, 19);
+    background-image: url("../images/rcb.png");
 }
 .dc{
     background-color: darkblue;
+    background-image: url("../images/dc.png");
 }
